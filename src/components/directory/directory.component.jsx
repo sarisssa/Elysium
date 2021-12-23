@@ -1,4 +1,5 @@
 import React from 'react';
+import MenuItem from '../menu-item/menu-item.component.jsx';
 
 class Directory extends React.Component {
     constructor() {
@@ -29,14 +30,14 @@ class Directory extends React.Component {
                     imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
                     size: 'large',
                     id: 4,
-                    linkUrl: 'shop/womens'
+                    linkUrl: 'shop/lifestyle'
                 },
                 {
                     title: 'shop all',
                     imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
                     size: 'large',
                     id: 5,
-                    linkUrl: 'shop/mens'
+                    linkUrl: 'shop/all'
                 }
             ]
         }
