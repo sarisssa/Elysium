@@ -8,6 +8,8 @@
   border: 1px solid black;
   margin: 0 7.5px 15px;
   overflow: hidden;
+  background-position: center;
+  background-size: cover;
 
   &:hover {
     cursor: pointer;
@@ -22,7 +24,7 @@
     }
   }
 
-  &.large {
+  &.large { //Apply special styling for menu item components with large property
     height: 380px;
   }
 
