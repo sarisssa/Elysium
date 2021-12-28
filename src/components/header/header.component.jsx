@@ -34,7 +34,7 @@ const Header = ({ currentUser, hidden }) => (
     </div>
 );
 
-const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({ //state will be top level rootReducer
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({ //Input will be top level rootReducer
     currentUser,
     hidden
 })
