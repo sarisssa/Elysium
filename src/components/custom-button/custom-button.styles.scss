@@ -1,4 +1,6 @@
 .custom-button {
+  display: flex;
+  justify-content: center;
   min-width: 165px;
   width: auto;
   height: 50px;
@@ -12,6 +14,7 @@
   font-weight: bolder;
   border: none;
   cursor: pointer;
+  
 
   &:hover {
     background-color: white;
