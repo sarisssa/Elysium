@@ -20,6 +20,7 @@ class App extends React.Component {
 
   unsubscribeFromAuth = null;
 
+  //Listener that monitors for changes in sign-in status and sets state accordingly
   componentDidMount() {
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
