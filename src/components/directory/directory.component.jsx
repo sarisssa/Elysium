@@ -3,7 +3,6 @@ import MenuItem from '../menu-item/menu-item.component.jsx';
 
 import './directory.styles.scss';
 
-
 class Directory extends React.Component {
     constructor() {
         super();
