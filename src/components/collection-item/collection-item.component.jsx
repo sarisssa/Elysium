@@ -12,8 +12,6 @@ import {
     PriceContainer 
 } from './collection-item.styles.jsx';
 
-import './collection-item.styles.scss';
-
 const CollectionItem = ({ item, addItem }) => {
     const { name, price, imageUrl } = item;
 
@@ -24,7 +22,7 @@ const CollectionItem = ({ item, addItem }) => {
                 <NameContainer>{name}</NameContainer>
                 <PriceContainer>{price}</PriceContainer>
             </CollectionFooterContainer>
-            <AddButton onClick={() => addItem(item)}> 
+            <AddButton onClick={() => addItem(item)} > 
                 Add to cart 
             </AddButton>
         </CollectionItemContainer>
