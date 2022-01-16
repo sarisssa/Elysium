@@ -24,9 +24,9 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   //Register new user info into Firestore if user snapShot does not exist
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
-    
+
     const createdAt = new Date();
-    
+
     try {
       await userRef.set({
         displayName,
@@ -52,6 +52,20 @@ export const addCollection = async (collectionKey, objectsToAdd) => {
   });
 
   return await batch.commit();
+};
+
+export const convertCollectionsSnapshot = (collections) => { //Convert snapshot from Firebase to object
+  const transformedCollection = collections.docs.map((doc) => {
+    const { title, items } = doc.data();
+
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items,
+    };
+  });
+  console.log(transformedCollection);
 };
 
 export const auth = firebase.auth();
