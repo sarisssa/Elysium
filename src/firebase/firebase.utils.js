@@ -65,7 +65,13 @@ export const convertCollectionsSnapshot = (collections) => { //Convert snapshot 
       items,
     };
   });
-  console.log(transformedCollection);
+
+  
+  //Pass in empty obj into collection and set title value to be equal to its collection
+  return transformedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator;
+  }, {});
 };
 
 export const auth = firebase.auth();
