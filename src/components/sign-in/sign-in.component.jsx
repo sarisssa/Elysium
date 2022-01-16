@@ -13,7 +13,10 @@ class SignIn extends React.Component {
 
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            error: {
+                errorMessage: ''
+            }
         };
     }
 
@@ -24,9 +27,14 @@ class SignIn extends React.Component {
 
         try {
             await auth.signInWithEmailAndPassword(email, password);
-            this.setState({ email: '', password: '' });
+            this.setState({ email: '', password: '', error: {
+                errorMessage: ''
+            } });
         } catch (error) {
-            console.log(error);
+            console.log(error.message);
+            this.setState({error: {
+                errorMessage: error.message
+            }})
         }
     };
 
@@ -34,6 +42,7 @@ class SignIn extends React.Component {
         const { value, name } = event.target;
         this.setState({ [name]: value });
     };
+
 
     render() {
         return (
@@ -48,6 +57,7 @@ class SignIn extends React.Component {
                         handleChange={this.handleChange}
                         value={this.state.email}
                         label='email'
+                        errorMessage={this.state.error.errorMessage}
                         required
                     />
                     <FormInput
@@ -58,8 +68,9 @@ class SignIn extends React.Component {
                         label='password'
                         required
                     />
+                    <span className='error-message'>{this.state.error.password}</span>
                     <div className='buttons'>
-                        <CustomButton type='submit'> Sign in </CustomButton>
+                        <CustomButton type='submit'>Sign in</CustomButton>
                         <CustomButton type='button' onClick={signInWithGoogle} isGoogleSignIn>
                             Sign in with Google
                         </CustomButton>
