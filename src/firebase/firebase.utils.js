@@ -66,7 +66,6 @@ export const convertCollectionsSnapshot = (collections) => { //Convert snapshot 
     };
   });
 
-  
   //Pass in empty obj into collection and set title value to be equal to its collection
   return transformedCollection.reduce((accumulator, collection) => {
     accumulator[collection.title.toLowerCase()] = collection;
