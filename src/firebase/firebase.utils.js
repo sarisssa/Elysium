@@ -54,7 +54,7 @@ export const addCollection = async (collectionKey, objectsToAdd) => {
   return await batch.commit();
 };
 
-export const convertCollectionsSnapshot = (collections) => { //Convert snapshot from Firebase to object
+export const convertCollectionsSnapshotToMap = (collections) => { //Convert snapshot from Firebase to object
   const transformedCollection = collections.docs.map((doc) => {
     const { title, items } = doc.data();
 
