@@ -4,13 +4,13 @@ const INITIAL_STATE = {
             title: 'accessories',
             imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
             id: 1,
-            linkUrl: 'shop/accessories'
+            linkUrl: 'shop/hats'
         },
         {
             title: 'outerwear',
             imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
             id: 2,
-            linkUrl: 'shop/outerwear'
+            linkUrl: 'shop/jackets'
         },
         {
             title: 'sneakers',
