@@ -11,8 +11,6 @@ import {
   CollectionItemsContainer
 } from './collection.styles.jsx';
 
-import './collection.styles.scss';
-
 const CollectionPage = ({ collection }) => {
   const { title, items } = collection
   
