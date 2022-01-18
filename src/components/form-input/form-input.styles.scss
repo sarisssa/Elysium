@@ -7,6 +7,10 @@ $main-color: black;
   color: $main-color;
 }
 
+.login-error {
+  border: 2px solid  red !important;
+}
+
 .group {
   position: relative;
   margin: 45px 0;

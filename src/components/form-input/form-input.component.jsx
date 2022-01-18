@@ -5,12 +5,13 @@ import './form-input.styles.scss';
 const FormInput = (props) =>  {
     
     const { handleChange, label, errorMessage } = props;
-
-    const errorClass = errorMessage?.length > 0 ? 'login-error' : '';
+    console.log('TEST ERROR: ', errorMessage);
+    const error = errorMessage ? 'login-error' : ''
+    console.log('VARIABLE', error);
 
     return (
     <div className='group'>
-        <input className={`${errorClass} form-input`} onChange={handleChange} {...props} />
+            <input className={`form-input ${error}`} onChange={handleChange} {...props} />
         {label ? (
             //Append 'shrink' to class name and move placeholder up top if there is user input in input field
             <label className={`${props.value.length ? 'shrink' : ''} form-input-label`}>
@@ -22,3 +23,4 @@ const FormInput = (props) =>  {
 }
 
 export default FormInput;
+

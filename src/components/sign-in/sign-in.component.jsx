@@ -66,9 +66,12 @@ class SignIn extends React.Component {
                         value={this.state.password}
                         handleChange={this.handleChange}
                         label='password'
+                        errorMessage={this.state.error.errorMessage}
                         required
                     />
-                    <span className='error-message'>{this.state.error.password}</span>
+                    {this.state.error.errorMessage && <p className='error-message'>
+                        Incorrect credentials. Please try again.
+                    </p> }
                     <div className='buttons'>
                         <CustomButton type='submit'>Sign in</CustomButton>
                         <CustomButton type='button' onClick={signInWithGoogle} isGoogleSignIn>
