@@ -16,7 +16,8 @@ export const fetchCollectionsFailure = errorMessage => ({
     payload: errorMessage
 });
 
-export const fetchCollectionsStartAsync = () => {
+//Note thunk can dispatch multiple actions to handle async operations within the action instead of within a component
+export const fetchCollectionsStartAsync = () => { 
     return dispatch => {
         const collectionRef = firestore.collection('collections');
         dispatch(fetchCollectionsStart());
@@ -24,7 +25,6 @@ export const fetchCollectionsStartAsync = () => {
         collectionRef.get().then(snapshot => {
             const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
             dispatch(fetchCollectionsSuccess(collectionsMap));
-            this.setState({ loading: false });
         })
         .catch(error => dispatch(fetchCollectionsFailure(error.message)));
     };
