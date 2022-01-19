@@ -4,6 +4,10 @@ import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 
 import { fetchCollectionsStartAsync } from '../../redux/shop/shop.actions';
+
+import CollectionsOverviewContainer from '../../components/collections-overview/collections-overview.container';
+
+
 import { selectIsCollectionFetching, selectIsCollectionLoaded } from '../../redux/shop/shop.selectors';
 
 import WithSpinner from '../../components/with-spinner/with-spinner.component';
@@ -29,9 +33,7 @@ class ShopPage extends React.Component {
         <Route
           exact
           path={`${match.path}`}
-          render={props => (
-            <CollectionsOverviewWithSpinner isLoading={isCollectionFetching} {...props} />
-          )}
+          component={CollectionsOverviewContainer}
         />
         <Route
           path={`${match.path}/:collectionId`}
