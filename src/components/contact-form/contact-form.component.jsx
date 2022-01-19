@@ -21,13 +21,23 @@ const ContactForm = () => (
                     <label>
                         Your Name <span className='required'>*</span>
                     </label>
-                    <input className='contact-name' type="text" placeholder='Your Name' required />
+                    <input 
+                        className='contact-name' 
+                        type="text" 
+                        placeholder='Your Name' 
+                        required 
+                    />
                 </div>
-                <div >
+                <div>
                     <label>
                         Your Email <span className='required'>*</span>
                     </label>
-                    <input className='contact-email' type="text" placeholder='Email' required />
+                    <input 
+                        className='contact-email' 
+                        type="text" 
+                        placeholder='Email' 
+                        required 
+                    />
                 </div>
             </div>
             <div className='contact-form-second-row'>
@@ -35,7 +45,12 @@ const ContactForm = () => (
                     <label>
                         Order # <span className='required'>*</span>
                     </label>
-                    <input className='contact-order-number' type="text" placeholder='Order #' required />
+                    <input 
+                        className='contact-order-number' 
+                        type="text" 
+                        placeholder='Order #' 
+                        required 
+                    />
                 </div>
                 <div>
                     <label>
