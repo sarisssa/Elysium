@@ -5,9 +5,7 @@ import './form-input.styles.scss';
 const FormInput = (props) =>  {
     
     const { handleChange, label, errorMessage } = props;
-    console.log('TEST ERROR: ', errorMessage);
     const error = errorMessage ? 'login-error' : ''
-    console.log('VARIABLE', error);
 
     return (
     <div className='group'>
