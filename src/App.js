@@ -12,13 +12,13 @@ import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import ContactPage from './pages/contact/contact.component';
 import CheckoutPage from './pages/checkout/checkout.component';
+import Footer from './components/footer/footer.component';
 
 import { auth, createUserProfileDocument} from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 
-const App = (props) => {
-  const { setCurrentUser } = props;
+const App = ({ setCurrentUser }) => {
 
   useEffect (() => {
     auth.onAuthStateChanged(async userAuth => {
@@ -56,7 +56,7 @@ const App = (props) => {
             } 
           />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     );
   }
