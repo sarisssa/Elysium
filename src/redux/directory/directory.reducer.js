@@ -2,7 +2,7 @@ const INITIAL_STATE = {
     sections: [
         {
             title: 'accessories',
-            imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+            imageUrl: 'https://static.zumiez.com/skin/frontend/delorum/default/images/back-to-school-backpacks-cookies-july21-444x500.jpg',
             id: 1,
             linkUrl: 'shop/hats'
         },
@@ -14,20 +14,20 @@ const INITIAL_STATE = {
         },
         {
             title: 'sneakers',
-            imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+            imageUrl: 'https://www.highsnobiety.com/static-assets/thumbor/n_3CL-cxlepbKGdED84mnLu1udg=/1600x1067/www.highsnobiety.com/static-assets/wp-content/uploads/2018/01/16122913/Sneaker-Main.jpg',
             id: 3,
             linkUrl: 'shop/sneakers'
         },
         {
             title: 'womens',
-            imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+            imageUrl: 'https://fashionista.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cq_auto:good%2Cw_1200/MTY1Mzc5MzE4NTYwNTk3NDA5/aleali-may-streetwear-1.png',
             size: 'large',
             id: 4,
             linkUrl: 'shop/womens'
         },
         {
             title: 'mens',
-            imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+            imageUrl: 'https://cdn.shopify.com/s/files/1/1147/7882/articles/London-Streetwear-2019_75c5deb2-57f6-42b0-802c-a03647568bd8_1200x630.jpg?v=1563405513',
             size: 'large',
             id: 5,
             linkUrl: 'shop/mens'
