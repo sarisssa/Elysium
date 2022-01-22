@@ -19,7 +19,7 @@ const CollectionPage = ({ collection }) => {
       <CollectionTitle>{title}</CollectionTitle>
       <CollectionItemsContainer>
         {items && items.map(item => (
-          <CollectionItem key={item.id} item={item} />
+          <CollectionItem key={item.id} item={item} baseURL='/shop'/>
         ))}
       </CollectionItemsContainer>
     </CollectionPageContainer>
