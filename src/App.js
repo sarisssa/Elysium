@@ -18,7 +18,7 @@ import { auth, createUserProfileDocument} from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 
-const App = ({ setCurrentUser }) => {
+const App = ({ setCurrentUser, currentUser }) => {
 
   useEffect (() => {
     auth.onAuthStateChanged(async userAuth => {
@@ -48,7 +48,7 @@ const App = ({ setCurrentUser }) => {
             exact
             path='/signin'
             render={() => 
-              this.props.currentUser ? (
+              currentUser ? (
                 <Redirect to='/' />
               ) : (
                 <SignInAndSignUpPage />
