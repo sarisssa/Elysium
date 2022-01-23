@@ -25,7 +25,7 @@ const ShopPage = ({ fetchCollectionsStartAsync, match }) => {
       />
       <Route
         exact
-        path={`${match.path}/:collectionId`} //Change name to collectionName
+        path={`${match.path}/:collectionName`} //Change name to collectionName
         component={CollectionPageContainer}
       />
       <Route
