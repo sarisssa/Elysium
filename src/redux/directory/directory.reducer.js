@@ -4,13 +4,13 @@ const INITIAL_STATE = {
             title: 'accessories',
             imageUrl: 'https://static.zumiez.com/skin/frontend/delorum/default/images/back-to-school-backpacks-cookies-july21-444x500.jpg',
             id: 1,
-            linkUrl: 'shop/hats'
+            linkUrl: 'shop/accessories'
         },
         {
             title: 'outerwear',
-            imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+            imageUrl: 'https://cdn.shopify.com/s/files/1/1147/7882/articles/London-Streetwear-2019_75c5deb2-57f6-42b0-802c-a03647568bd8_1200x630.jpg?v=1563405513',
             id: 2,
-            linkUrl: 'shop/jackets'
+            linkUrl: 'shop/outerwear'
         },
         {
             title: 'sneakers',
@@ -19,18 +19,18 @@ const INITIAL_STATE = {
             linkUrl: 'shop/sneakers'
         },
         {
-            title: 'womens',
+            title: 'pants',
             imageUrl: 'https://fashionista.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cq_auto:good%2Cw_1200/MTY1Mzc5MzE4NTYwNTk3NDA5/aleali-may-streetwear-1.png',
             size: 'large',
             id: 4,
-            linkUrl: 'shop/womens'
+            linkUrl: 'shop/pants'
         },
         {
-            title: 'mens',
-            imageUrl: 'https://cdn.shopify.com/s/files/1/1147/7882/articles/London-Streetwear-2019_75c5deb2-57f6-42b0-802c-a03647568bd8_1200x630.jpg?v=1563405513',
+            title: 'shirts',
+            imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
             size: 'large',
             id: 5,
-            linkUrl: 'shop/mens'
+            linkUrl: 'shop/shirts'
         }
     ]
 };

@@ -16,16 +16,22 @@ import {
 const CollectionItem = ({ item, addItem, history, match, baseURL}) => {
     const { name, price, imageUrl, id} = item;
     
+    //Two pages that navigate to the same collection item detail page. 
+
+    //1: Shop Page
+    //2: Actual Collections Page
+    //Remove baseURL
+
     return (
         <CollectionItemContainer>
-            <BackgroundImage style={{ backgroundImage: `url(${imageUrl})` }} onClick={() => history.push(`${baseURL ? baseURL : match.url}/${id}/details`)}/>
+            <BackgroundImage style={{ backgroundImage: `url(${imageUrl})` }} onClick={() => history.push(`${match.url}/${id}/details`)}/>
             <CollectionFooterContainer>
                 <NameContainer>{name}</NameContainer>
                 <PriceContainer>${price}</PriceContainer>
             </CollectionFooterContainer>
-            {/* <AddButton onClick={() => addItem(item)} > 
+            <AddButton onClick={() => addItem(item)} > 
                 Add to cart 
-            </AddButton> */}
+            </AddButton>
         </CollectionItemContainer>
     );
 }

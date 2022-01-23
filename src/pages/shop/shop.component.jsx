@@ -7,7 +7,7 @@ import { fetchCollectionsStartAsync } from '../../redux/shop/shop.actions';
 
 import CollectionsOverviewContainer from '../../components/collections-overview/collections-overview.container';
 import CollectionPageContainer from '../collection/collection.container';
-import ItemDetails from '../ItemDetails';
+import ItemDetailsPage from '../ItemDetails';
 
 const ShopPage = ({ fetchCollectionsStartAsync, match }) => {
   useEffect(() => {
@@ -25,13 +25,13 @@ const ShopPage = ({ fetchCollectionsStartAsync, match }) => {
       />
       <Route
         exact
-        path={`${match.path}/:collectionId`}
+        path={`${match.path}/:collectionId`} //Change name to collectionName
         component={CollectionPageContainer}
       />
       <Route
         exact
         path={`${match.path}/:productId/details`}
-        component={ItemDetails}
+        component={ItemDetailsPage}
       />
     </div>
   );
@@ -42,3 +42,4 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(null, mapDispatchToProps)(ShopPage);
+

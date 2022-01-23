@@ -11,22 +11,24 @@ import {
   CollectionItemsContainer
 } from './collection.styles.jsx';
 
-const CollectionPage = ({ collection }) => {
+const CollectionPage = ({ collection, match }) => {
   const { title, items } = collection
+  console.log(collection);
+  console.log(match.params)
   
   return (
     <CollectionPageContainer>
       <CollectionTitle>{title}</CollectionTitle>
       <CollectionItemsContainer>
         {items && items.map(item => (
-          <CollectionItem key={item.id} item={item} baseURL='/shop'/>
+          <CollectionItem key={item.id} item={item} />
         ))}
       </CollectionItemsContainer>
     </CollectionPageContainer>
   );
 };
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, ownProps) => ({ //Note second optional parameter of mapStatetoProps which is the props of the component in question
   collection: selectCollection(ownProps.match.params.collectionId)(state)
 });
 
