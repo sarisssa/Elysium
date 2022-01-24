@@ -13,15 +13,14 @@ import {
 
 const CollectionPage = ({ collection, match }) => {
   const { title, items } = collection
-  console.log(collection);
-  console.log(match.params)
+  // console.log('COLLECTION', collection);
   
   return (
     <CollectionPageContainer>
       <CollectionTitle>{title}</CollectionTitle>
       <CollectionItemsContainer>
         {items && items.map(item => (
-          <CollectionItem key={item.id} item={item} />
+          <CollectionItem key={item.id} item={item} productSlug={`${match.url}/${item.id}/details`}/>
         ))}
       </CollectionItemsContainer>
     </CollectionPageContainer>

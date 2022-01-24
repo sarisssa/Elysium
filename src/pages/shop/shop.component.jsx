@@ -25,12 +25,12 @@ const ShopPage = ({ fetchCollectionsStartAsync, match }) => {
       />
       <Route
         exact
-        path={`${match.path}/:collectionName`} //Change name to collectionName
+        path={`${match.path}/:collectionName`} 
         component={CollectionPageContainer}
       />
       <Route
         exact
-        path={`${match.path}/:productId/details`}
+        path={`${match.path}/:collectionName/:productId/details`}
         component={ItemDetailsPage}
       />
     </div>

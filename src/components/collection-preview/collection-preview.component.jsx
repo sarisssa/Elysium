@@ -5,7 +5,9 @@ import CollectionItem from '../collection-item/collection-item.component';
 
 import './collection-preview.styles.scss';
 
-const CollectionPreview = ({ title, items, history, match }) => (
+const CollectionPreview = ({ title, items, history, match }) => { 
+    
+    return (
     <div className='collection-preview'>
         <h1 className='title' onClick={() => history.push(`${match.url}/${title.toLowerCase()}`)}>
             {title.toUpperCase()}
@@ -14,10 +16,10 @@ const CollectionPreview = ({ title, items, history, match }) => (
             {items
                 .filter((item, index) => index < 4)
                 .map(item => ( //Limit displayed items to 4 under each category
-                    <CollectionItem key={item.id} item={item} />
+                    <CollectionItem key={item.id} item={item} productSlug={`${match.url}/${title.toLowerCase()}/${item.id}/details`} />
                 ))}
         </div>
     </div>
-);
+);}
 
 export default withRouter(CollectionPreview);

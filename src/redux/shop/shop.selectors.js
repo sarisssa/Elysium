@@ -15,7 +15,12 @@ export const selectCollectionsForPreview = createSelector(
 
 export const selectCollection = (collectionUrlParam) =>
   createSelector([selectCollections], (collections) =>
-    collections ? collections[collectionUrlParam] : {}
+       collections ? collections[collectionUrlParam] : {}
+);
+
+export const selectItem = (collectionUrlParam, productID) =>
+  createSelector([selectCollections], (collections) =>
+  collections[collectionUrlParam].items.find(item => item.id === parseInt(productID))
 );
 
 export const selectIsCollectionFetching = createSelector(
