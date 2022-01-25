@@ -16,3 +16,9 @@ const CollectionsOverviewContainer = compose(
 )(CollectionsOverview);
 
 export default CollectionsOverviewContainer;
+
+//Note container pattern above with two levels of wrappers leveraging compose which evaluates from right to left. 
+
+//Layer 1/First Evaluation: WithSpinner(CollectionsOverview)
+
+//Layer 2/Second Evaluation: connect(mapStateToProps)(Layer 1)
