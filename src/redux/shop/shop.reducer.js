@@ -1,4 +1,3 @@
-import getStoredStateMigrateV4 from 'redux-persist/lib/integration/getStoredStateMigrateV4';
 import ShopActionTypes from './shop.types';
 
 const INITIAL_STATE = {

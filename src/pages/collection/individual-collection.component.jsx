@@ -13,7 +13,6 @@ import {
 
 const CollectionPage = ({ collection, match }) => {
   const { title, items } = collection
-  // console.log('COLLECTION', collection);
   
   return (
     <CollectionPageContainer>

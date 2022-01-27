@@ -3,20 +3,23 @@ import { connect } from "react-redux";
 
 import { selectItem } from "../redux/shop/shop.selectors";
 
-const ItemDetailsPage = ({ item, match }) => {
+const ItemDetailsPage = ({ item }) => {
 
-    console.log(match.params);
-    const {id,name } = item;
+    const { imageUrl, name, price } = item;
 
     return (
-        <h1>{name}</h1>
+        <div className='product-detail-container'>
+            <h1 className='item-name'>{name}</h1>
+            <h2 className='price'>{price}</h2>
+        </div>
     );
 }
 
 const mapStateToProps = (state, ownProps) => ({
     item: selectItem(ownProps.match.params.collectionName, ownProps.match.params.productId)(state)
-  });
+});
 
 export default connect(mapStateToProps)(withRouter(ItemDetailsPage));
 
-// export default withRouter(ItemDetailsPage)
+
+
