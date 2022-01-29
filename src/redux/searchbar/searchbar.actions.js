@@ -1,5 +1,5 @@
-import SearchbarActionTypes from "./searchbar.types";
+import SearchBarActionTypes from "./searchbar.types";
 
-export const toggleSearchbarHidden = () => ({
-    type: SearchbarActionTypes.TOGGLE_SEARCHBAR_HIDDEN
+export const toggleSearchBarHidden = () => ({
+    type: SearchBarActionTypes.TOGGLE_SEARCHBAR_HIDDEN
 });
