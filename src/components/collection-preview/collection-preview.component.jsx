@@ -16,7 +16,11 @@ const CollectionPreview = ({ title, items, history, match }) => {
             {items
                 .filter((item, index) => index < 4)
                 .map(item => ( //Limit displayed items to 4 under each category
-                    <CollectionItem key={item.id} item={item} productSlug={`${match.url}/${title.toLowerCase()}/${item.id}/details`} />
+                    <CollectionItem 
+                        key={item.id} 
+                        item={item} 
+                        productSlug={`${match.url}/${title.toLowerCase()}/${item.id}/details`} 
+                    />
                 ))}
         </div>
     </div>
