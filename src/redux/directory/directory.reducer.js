@@ -20,14 +20,14 @@ const INITIAL_STATE = {
         },
         {
             title: 'pants',
-            imageUrl: 'https://fashionista.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cq_auto:good%2Cw_1200/MTY1Mzc5MzE4NTYwNTk3NDA5/aleali-may-streetwear-1.png',
+            imageUrl: 'https://cdn.shopify.com/s/files/1/0495/1044/9304/products/product-image-1435595279_800x.jpg?v=1603999835',
             size: 'large',
             id: 4,
             linkUrl: 'shop/pants'
         },
         {
             title: 'shirts',
-            imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+            imageUrl: 'https://i.pinimg.com/564x/c8/2b/5a/c82b5a0501591431e1e47d84b2aec2ff.jpg',
             size: 'large',
             id: 5,
             linkUrl: 'shop/shirts'
