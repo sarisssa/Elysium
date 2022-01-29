@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { auth } from '../../firebase/firebase.utils';
@@ -17,7 +16,7 @@ import {
     OptionLink 
 } from './header.styles.jsx';
 
-const Header = ({ currentUser, hidden }) => (
+const Header = ({ currentUser, isCartHidden }) => (
     <HeaderContainer>
         <LogoContainer to="/">
             <Logo className='logo' />
@@ -34,13 +33,13 @@ const Header = ({ currentUser, hidden }) => (
             )}
             <CartIcon />
         </OptionsContainer>
-        {hidden ? null : <CartDropdown />}
+        {isCartHidden ? null : <CartDropdown />}
     </HeaderContainer>
 );
 
 const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,
-    hidden: selectCartHidden
+    isCartHidden: selectCartHidden
 });
 
 export default connect(mapStateToProps)(Header);
