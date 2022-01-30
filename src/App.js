@@ -3,8 +3,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import './App.css';
-
 import Header from './components/header/header.component';
 
 import HomePage from './pages/homepage/homepage.component';
@@ -13,6 +11,8 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import ContactPage from './pages/contact/contact.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 import Footer from './components/footer/footer.component';
+
+import { GlobalStyle } from './global.styles';
 
 import { auth, createUserProfileDocument} from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
@@ -38,6 +38,7 @@ const App = ({ setCurrentUser, currentUser }) => {
  
     return (
       <div>
+        <GlobalStyle />
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
