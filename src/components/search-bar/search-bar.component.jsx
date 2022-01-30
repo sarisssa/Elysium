@@ -5,6 +5,7 @@ const SearchBar = ({ searchfield, inputChange }) => {
       <input
         className='search-bar-input'
         type='search'
+        placeholder='Search'
         onChange={inputChange}
       />
     </div>
