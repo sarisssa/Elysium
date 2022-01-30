@@ -4,7 +4,11 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: 'Libre Franklin', sans-serif;
-        padding: 20px 60px;
+        padding: 20px 40px;
+
+        @media screen and (max-width: 800px) {
+            padding: 10px;
+        }
     }
 
     a {
