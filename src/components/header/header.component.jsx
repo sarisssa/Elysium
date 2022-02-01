@@ -10,8 +10,10 @@ import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 import { selectSearchBarHidden } from '../../redux/searchbar/searchbar.selectors';
+import { clearAllFromCart } from '../../redux/cart/cart.actions';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
+import { selectCollections } from '../../redux/shop/shop.selectors';
 
 import { ReactComponent as Logo } from '../../assets/pillar.svg';
 
@@ -22,13 +24,7 @@ import {
     OptionLink
 } from './header.styles.jsx';
 
-const Header = ({ currentUser, isCartHidden, isSearchBarHidden }) => {
-
-    const [searchbar, setSearchbar] = useState('');
-
-    const onInputChange = event => {
-        setSearchbar(event.target.value)
-    }
+const Header = ({ currentUser, isCartHidden, isSearchBarHidden, collections, clearAllFromCart }) => {
 
     return (
         <HeaderContainer>
@@ -36,11 +32,14 @@ const Header = ({ currentUser, isCartHidden, isSearchBarHidden }) => {
                 <Logo className='logo' />
             </LogoContainer>
             <OptionsContainer>
-                {isSearchBarHidden ? null : <SearchBar inputChange={onInputChange} />}
+                {isSearchBarHidden ? null : <SearchBar collections={collections} />}
                 <OptionLink to='/shop'>SHOP</OptionLink>
                 <OptionLink to='/contact'>CONTACT</OptionLink>
                 {currentUser ? (
-                    <OptionLink as='div' onClick={() => auth.signOut()}>
+                    <OptionLink as='div' onClick={() => {
+                        clearAllFromCart();
+                        auth.signOut()
+                    } }>
                         SIGN OUT
                     </OptionLink>
                 ) : (
@@ -57,7 +56,15 @@ const Header = ({ currentUser, isCartHidden, isSearchBarHidden }) => {
 const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,
     isCartHidden: selectCartHidden,
-    isSearchBarHidden: selectSearchBarHidden
+    isSearchBarHidden: selectSearchBarHidden,
+    collections: selectCollections
 });
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = dispatch => ({
+    clearAllFromCart: () => dispatch(clearAllFromCart())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
+
+
+//mapStateToProps => Autocomplete 
