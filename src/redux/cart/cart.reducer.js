@@ -3,7 +3,7 @@ import { addItemToCart, removeItemFromCart } from './cart.utils';
 
 const INITIAL_STATE = {
   hidden: true,
-  cartItems: []
+  cartItems: [],
 };
 
 const cartReducer = (state = INITIAL_STATE, action) => {
@@ -30,9 +30,16 @@ const cartReducer = (state = INITIAL_STATE, action) => {
           cartItem => cartItem.id !== action.payload.id //Keep item in cart if id's do not match
         )
       };
+    case CartActionTypes.CLEAR_ALL_ITEMS:
+      return {
+        ...state,
+        cartItems: []
+      }
     default:
       return state;
   }
 };
 
 export default cartReducer;
+
+//Handle cart from back end
