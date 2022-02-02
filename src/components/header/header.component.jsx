@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { auth } from '../../firebase/firebase.utils';
@@ -57,7 +55,6 @@ const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,
     isCartHidden: selectCartHidden,
     isSearchBarHidden: selectSearchBarHidden,
-    collections: selectCollections
 });
 
 const mapDispatchToProps = dispatch => ({
