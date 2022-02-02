@@ -11,7 +11,6 @@ import { selectSearchBarHidden } from '../../redux/searchbar/searchbar.selectors
 import { clearAllFromCart } from '../../redux/cart/cart.actions';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
-import { selectCollections } from '../../redux/shop/shop.selectors';
 
 import { ReactComponent as Logo } from '../../assets/pillar.svg';
 
