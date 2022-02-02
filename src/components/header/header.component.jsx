@@ -24,7 +24,7 @@ import {
     OptionLink
 } from './header.styles.jsx';
 
-const Header = ({ currentUser, isCartHidden, isSearchBarHidden, collections, clearAllFromCart }) => {
+const Header = ({ currentUser, isCartHidden, isSearchBarHidden, clearAllFromCart }) => {
 
     return (
         <HeaderContainer>
@@ -32,7 +32,7 @@ const Header = ({ currentUser, isCartHidden, isSearchBarHidden, collections, cle
                 <Logo className='logo' />
             </LogoContainer>
             <OptionsContainer>
-                {isSearchBarHidden ? null : <SearchBar collections={collections} />}
+                {isSearchBarHidden ? null : <SearchBar />}
                 <OptionLink to='/shop'>SHOP</OptionLink>
                 <OptionLink to='/contact'>CONTACT</OptionLink>
                 {currentUser ? (
@@ -65,6 +65,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
-
-
-//mapStateToProps => Autocomplete 
