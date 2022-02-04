@@ -3,7 +3,11 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
+import { fetchCollectionsStartAsync } from './redux/shop/shop.actions';
+import { selectSearchBarHidden } from './redux/searchbar/searchbar.selectors';
+
 import Header from './components/header/header.component';
+import SearchBar from './components/search-bar/search-bar.component';
 
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
@@ -18,7 +22,12 @@ import { auth, createUserProfileDocument} from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 
-const App = ({ setCurrentUser, currentUser }) => {
+
+const App = ({ fetchCollectionsStartAsync, setCurrentUser, currentUser, isSearchBarHidden }) => {
+
+  useEffect(() => {
+    fetchCollectionsStartAsync()
+  }, []);
 
   useEffect (() => {
     auth.onAuthStateChanged(async userAuth => {
@@ -35,11 +44,11 @@ const App = ({ setCurrentUser, currentUser }) => {
       setCurrentUser(userAuth);
     });
   }, [])
- 
+
     return (
       <div>
-        <GlobalStyle />
-        <Header />
+        <GlobalStyle /> 
+        {isSearchBarHidden ? <Header /> : <SearchBar />}
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/shop' component={ShopPage} />  
@@ -62,12 +71,18 @@ const App = ({ setCurrentUser, currentUser }) => {
     );
   }
 
+  //Add className to app.js
+  //Connect App to searchBarHidden
+  //If false, then className changes 
+  //Put everything behind header => CSS code overlay 
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
+  isSearchBarHidden: selectSearchBarHidden
 });
 
 const mapDispatchToProps = dispatch => ({
+  fetchCollectionsStartAsync: () => dispatch(fetchCollectionsStartAsync()),
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
