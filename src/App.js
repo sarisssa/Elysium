@@ -71,11 +71,6 @@ const App = ({ fetchCollectionsStartAsync, setCurrentUser, currentUser, isSearch
     );
   }
 
-  //Add className to app.js
-  //Connect App to searchBarHidden
-  //If false, then className changes 
-  //Put everything behind header => CSS code overlay 
-
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
   isSearchBarHidden: selectSearchBarHidden
