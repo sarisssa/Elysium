@@ -16,9 +16,10 @@ export const HeaderContainer = styled.div`
 `;
 
 export const LogoContainer = styled(Link)`
-    height: 100%;
-    width: 70px;
-    padding: 25px;
+    svg {
+        height: auto;
+        width: 70px;
+    }
 
     @media screen and (max-width: 800px) {
         width: 45px;
@@ -43,3 +44,13 @@ export const OptionLink = styled(Link)`
     cursor: pointer;
 `;
 
+export const Overlay = styled.div`
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: 0.95;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+`;
