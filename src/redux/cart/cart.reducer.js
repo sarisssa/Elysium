@@ -3,7 +3,7 @@ import { addItemToCart, removeItemFromCart } from './cart.utils';
 
 const INITIAL_STATE = {
   hidden: true,
-  cartItems: [],
+  cartItems: [], 
 };
 
 const cartReducer = (state = INITIAL_STATE, action) => {
@@ -42,4 +42,3 @@ const cartReducer = (state = INITIAL_STATE, action) => {
 
 export default cartReducer;
 
-//Handle cart from back end

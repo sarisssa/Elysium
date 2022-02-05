@@ -14,7 +14,7 @@ import {
 } from './collection-item.styles.jsx';
 
 const CollectionItem = ({ item, addItem, history, productSlug}) => {
-    const { name, price, imageUrl, id} = item;
+    const { name, price, imageUrl } = item;
 
     return (
         <CollectionItemContainer>
@@ -35,4 +35,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default withRouter(connect(null, mapDispatchToProps)(CollectionItem));
+
 
