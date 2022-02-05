@@ -2,12 +2,10 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { auth } from '../../firebase/firebase.utils';
 
-import SearchBar from '../search-bar/search-bar.component';
 import SearchBarIcon from '../search-bar-icon/search-bar-icon.component';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
-import { selectSearchBarHidden } from '../../redux/searchbar/searchbar.selectors';
 import { clearAllFromCart } from '../../redux/cart/cart.actions';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
@@ -21,7 +19,7 @@ import {
     OptionLink
 } from './header.styles.jsx';
 
-const Header = ({ currentUser, isCartHidden, isSearchBarHidden, clearAllFromCart }) => {
+const Header = ({ currentUser, isCartHidden, clearAllFromCart }) => {
 
     return (
         <HeaderContainer>
@@ -29,7 +27,6 @@ const Header = ({ currentUser, isCartHidden, isSearchBarHidden, clearAllFromCart
                 <Logo className='logo' />
             </LogoContainer>
             <OptionsContainer>
-                {isSearchBarHidden ? null : <SearchBar />}
                 <OptionLink to='/shop'>SHOP</OptionLink>
                 <OptionLink to='/contact'>CONTACT</OptionLink>
                 {currentUser ? (
@@ -45,7 +42,7 @@ const Header = ({ currentUser, isCartHidden, isSearchBarHidden, clearAllFromCart
                 <SearchBarIcon />
                 <CartIcon />
             </OptionsContainer>
-            {isCartHidden ? null : <CartDropdown />}
+            {isCartHidden ? '' : <CartDropdown />}
         </HeaderContainer>
     );
 }
@@ -53,7 +50,6 @@ const Header = ({ currentUser, isCartHidden, isSearchBarHidden, clearAllFromCart
 const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,
     isCartHidden: selectCartHidden,
-    isSearchBarHidden: selectSearchBarHidden,
 });
 
 const mapDispatchToProps = dispatch => ({
