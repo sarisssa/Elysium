@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { auth } from '../../firebase/firebase.utils';
 
-import SearchBarIcon from '../search-bar-icon/search-bar-icon.component';
+import SearchBarIcon from '../search-bar-search-icon/search-bar-search-icon.component';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
