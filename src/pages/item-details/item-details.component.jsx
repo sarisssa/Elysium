@@ -23,7 +23,7 @@ const ItemDetailsPage = ({ item, addItem }) => {
 
     return (
         <div className='product-detail-container'>
-            <div class='product-detail-inner'>
+            <div className='product-detail-inner'>
                 <div className="product-image-container">
                     <img className='product-image' src={imageUrl} />
                 </div>
@@ -33,7 +33,7 @@ const ItemDetailsPage = ({ item, addItem }) => {
                 <h2 className='price'>${price}</h2>
                 <select className='contact-reason' type="text" required>
                     {sizes.map(ele => (
-                        <option key={`${ele}-${Math.random()}`} value={ele}>{ele}</option>
+                        <option key={uuidv4()} value={ele}>{ele}</option>
                     ))}
                 </select>
                 <CustomButton onClick={() => {

@@ -1,4 +1,7 @@
+import { v4 as uuidv4 } from 'uuid';
+
 import CustomButton from "../custom-button/custom-button.component";
+
 import './contact-form.styles.scss';
 
 const dropdown = [
@@ -58,7 +61,7 @@ const ContactForm = () => (
                     </label>
                     <select className='contact-reason' type="text" required>
                         {dropdown.map(ele => (
-                            <option value={ele}>{ele}</option>
+                            <option key={uuidv4()} value={ele}>{ele}</option>
                         ))}
                     </select>
                 </div>
