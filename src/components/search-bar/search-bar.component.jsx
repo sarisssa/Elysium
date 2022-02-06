@@ -10,6 +10,8 @@ import SearchBarCancelIcon from '../search-bar-cancel-icon/search-bar-cancel-ico
 import SearchBarDropdown from '../search-bar-dropdown/search-bar-dropdown.component';
 import { Overlay } from '../header/header.styles.jsx';
 
+import './search-bar.styles.scss';
+
 const SearchBar = ({ collections }) => {
 
   const [searchbar, setSearchbar] = useState('');
@@ -23,39 +25,20 @@ const SearchBar = ({ collections }) => {
     setProducts(sortedProducts);
   }
 
-  const styles = {
-    position: 'fixed',
-    background: 'white',
-    top: '0',
-    left: '0',
-    display: 'flex',
-    padding: '2rem',
-    zIndex: 5,
-    width: '100%',
-    justifyContent: 'center'
-  };
-
-  const searchBarStyles = {
-    background: 'white',
-    borderRadius: '30px',
-    padding: '1rem 2rem',
-    maxWidth: '500px',
-    width: '100%',
-  };
-
   return (
     <>
-      <div className='search-bar' style={styles}>
-        <input
-          className='search-bar-input'
-          type='search'
-          placeholder='Search'
-          value={searchbar}
-          onChange={event => search(event)}
-          style={searchBarStyles}
-        />
+      <div className='search-bar-container'>
+        <div className='search-bar-inner'>
+          <input
+            className='search-bar-input'
+            type='search'
+            placeholder='Search'
+            value={searchbar}
+            onChange={event => search(event)}
+          />
+          {searchbar && searchbar.length > 0 ? <SearchBarDropdown products={products} /> : null}
+        </div>
         <SearchBarCancelIcon />
-        {searchbar && searchbar.length > 0 ? <SearchBarDropdown products={products} /> : null}
       </div>
       <Overlay />
     </>
