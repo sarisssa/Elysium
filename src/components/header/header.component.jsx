@@ -33,7 +33,7 @@ const Header = ({ currentUser, isCartHidden, clearAllFromCart }) => {
                     <OptionLink as='div' onClick={() => {
                         clearAllFromCart();
                         auth.signOut()
-                    } }>
+                    }}>
                         SIGN OUT
                     </OptionLink>
                 ) : (
