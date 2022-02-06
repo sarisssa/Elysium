@@ -27,7 +27,7 @@ const App = ({ fetchCollectionsStartAsync, setCurrentUser, currentUser, isSearch
 
   useEffect(() => {
     fetchCollectionsStartAsync()
-  }, []);
+  }, [fetchCollectionsStartAsync]);
 
   useEffect (() => {
     auth.onAuthStateChanged(async userAuth => {
