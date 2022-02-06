@@ -2,8 +2,11 @@ import React, { useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import { setCurrentUser } from './redux/user/user.actions';
 
 import { fetchCollectionsStartAsync } from './redux/shop/shop.actions';
+import { selectCurrentUser } from './redux/user/user.selectors';
 import { selectSearchBarHidden } from './redux/searchbar/searchbar.selectors';
 
 import Header from './components/header/header.component';
@@ -18,18 +21,10 @@ import Footer from './components/footer/footer.component';
 
 import { GlobalStyle } from './global.styles';
 
-import { auth, createUserProfileDocument} from './firebase/firebase.utils';
-import { setCurrentUser } from './redux/user/user.actions';
-import { selectCurrentUser } from './redux/user/user.selectors';
-
-
 const App = ({ fetchCollectionsStartAsync, setCurrentUser, currentUser, isSearchBarHidden }) => {
 
   useEffect(() => {
     fetchCollectionsStartAsync()
-  }, [fetchCollectionsStartAsync]);
-
-  useEffect (() => {
     auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
@@ -45,31 +40,31 @@ const App = ({ fetchCollectionsStartAsync, setCurrentUser, currentUser, isSearch
     });
   }, [])
 
-    return (
-      <div>
-        <GlobalStyle /> 
-        {isSearchBarHidden ? <Header /> : <SearchBar />}
-        <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/shop' component={ShopPage} />  
-          <Route path='/contact' component={ContactPage} />  
-          <Route exact path='/checkout' component={CheckoutPage} />
-          <Route
-            exact
-            path='/signin'
-            render={() => 
-              currentUser ? (
-                <Redirect to='/' />
-              ) : (
-                <SignInAndSignUpPage />
-              ) 
-            } 
-          />
-        </Switch>
-        <Footer />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <GlobalStyle />
+      {isSearchBarHidden ? <Header /> : <SearchBar />}
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route path='/shop' component={ShopPage} />
+        <Route path='/contact' component={ContactPage} />
+        <Route exact path='/checkout' component={CheckoutPage} />
+        <Route
+          exact
+          path='/signin'
+          render={() =>
+            currentUser ? (
+              <Redirect to='/' />
+            ) : (
+              <SignInAndSignUpPage />
+            )
+          }
+        />
+      </Switch>
+      <Footer />
+    </div>
+  );
+}
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
