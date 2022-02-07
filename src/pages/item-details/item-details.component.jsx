@@ -19,7 +19,7 @@ const sizes = [
 
 const ItemDetailsPage = ({ item, addItem }) => {
 
-    const { name, price, imageUrl } = item;
+    const { name, price, imageUrl, description } = item;
 
     return (
         <div className='product-detail-container'>
@@ -36,6 +36,7 @@ const ItemDetailsPage = ({ item, addItem }) => {
                         <option key={uuidv4()} value={ele}>{ele}</option>
                     ))}
                 </select>
+                <body className='product-description'>{description}</body>
                 <CustomButton onClick={() => {
                     addItem(item)
                 } } >
