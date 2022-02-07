@@ -19,7 +19,7 @@ const ContactForm = () => (
     <div className='contact-form'>
         <h2 className='contact-form-heading'> Contact Us </h2>
         <form>
-            <div className='contact-form-first-row'>
+            <div className='contact-form-row'>
                 <div className='width-50-percent'>
                     <label>
                         Your Name <span className='required'>*</span>
@@ -43,7 +43,7 @@ const ContactForm = () => (
                     />
                 </div>
             </div>
-            <div className='contact-form-second-row'>
+            <div className='contact-form-row'>
                 <div className='width-50-percent'>
                     <label>
                         Order # <span className='required'>*</span>
@@ -55,7 +55,7 @@ const ContactForm = () => (
                         required 
                     />
                 </div>
-                <div>
+                <div className='width-50-percent'>
                     <label>
                         Dropdown <span className='required'>*</span>
                     </label>
