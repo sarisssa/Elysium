@@ -12,8 +12,12 @@ export const CollectionTitle = styled.h2`
 
 export const CollectionItemsContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
+  
+  @media screen and (min-width: 800px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
   
   & > div {
     margin-bottom: 30px;
