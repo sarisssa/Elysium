@@ -36,10 +36,10 @@ const ItemDetailsPage = ({ item, addItem }) => {
                         <option key={uuidv4()} value={ele}>{ele}</option>
                     ))}
                 </select>
-                <body className='product-description'>{description}</body>
+                <p className='product-description'>{description}</p>
                 <CustomButton onClick={() => {
                     addItem(item)
-                } } >
+                }} >
                     ADD TO CART
                 </CustomButton>
             </div>
