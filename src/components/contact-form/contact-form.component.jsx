@@ -31,7 +31,7 @@ const ContactForm = () => (
                         required 
                     />
                 </div>
-                <div>
+                <div className='width-50-percent'>
                     <label>
                         Your Email <span className='required'>*</span>
                     </label>
