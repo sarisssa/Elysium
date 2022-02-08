@@ -31,7 +31,7 @@ const ItemDetailsPage = ({ item, addItem }) => {
             <div className='product-detail-inner product-description'>
                 <h2 className='item-name'>{name}</h2>
                 <h2 className='price'>${price}</h2>
-                <select className='contact-reason' type="text" required>
+                <select className='size-dropdown' type="text" required>
                     {sizes.map(ele => (
                         <option key={uuidv4()} value={ele}>{ele}</option>
                     ))}
