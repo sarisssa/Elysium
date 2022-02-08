@@ -17,7 +17,6 @@ import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import ContactPage from './pages/contact/contact.component';
 import CheckoutPage from './pages/checkout/checkout.component';
-import Footer from './components/footer/footer.component';
 
 import { GlobalStyle } from './global.styles';
 
@@ -61,7 +60,6 @@ const App = ({ fetchCollectionsStartAsync, setCurrentUser, currentUser, isSearch
           }
         />
       </Switch>
-      <Footer />
     </div>
   );
 }
