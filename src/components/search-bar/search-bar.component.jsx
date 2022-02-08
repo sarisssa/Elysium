@@ -51,3 +51,4 @@ const mapStateToProps = createStructuredSelector({
 
 export default connect(mapStateToProps)(SearchBar);
 
+
