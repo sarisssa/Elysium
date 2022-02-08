@@ -42,17 +42,20 @@ const googleSignInStyles = css`
 export const CustomButtonContainer = styled.button`
     display: flex;
     justify-content: center;
-    min-width: 165px;
-    width: auto;
-    height: 50px;
     letter-spacing: 0.5px;
-    line-height: 50px;
-    padding: 0 35px 0 35px;
-    font-size: 15px;
+    padding: 12px 10px;
+    font-size: 11px;
+    line-height: 20px;
+
     
     text-transform: uppercase;
     font-weight: bolder;
     cursor: pointer;
+
+    @media screen and (min-width: 800px) {
+        padding: 15px 20px;
+        font-size: 15px;
+    }
 
     ${getButtonStyles}
 `;
