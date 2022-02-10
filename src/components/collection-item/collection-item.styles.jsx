@@ -8,10 +8,6 @@ export const CollectionItemContainer = styled.div`
     align-items: center;
     position: relative;
     
-    @media screen and (min-width: 800px) {
-        width: 22vw;
-    }
-    
     &:hover {
         .image {
             opacity: 0.8;
