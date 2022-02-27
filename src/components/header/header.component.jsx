@@ -49,7 +49,7 @@ const Header = ({ currentUser, isCartHidden, clearAllFromCart }) => {
 
 const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,
-    isCartHidden: selectCartHidden,
+    isCartHidden: selectCartHidden
 });
 
 const mapDispatchToProps = dispatch => ({

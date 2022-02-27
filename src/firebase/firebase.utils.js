@@ -58,7 +58,7 @@ export const convertCollectionsSnapshotToMap = (collections) => { //Convert snap
   const transformedCollection = collections.docs.map((doc) => {
     const { title, items } = doc.data();
 
-    return {
+    return { //Build each respective shop category in collections as an obj
       routeName: encodeURI(title.toLowerCase()),
       id: doc.id,
       title,
@@ -66,7 +66,7 @@ export const convertCollectionsSnapshotToMap = (collections) => { //Convert snap
     };
   });
 
-  //Pass in empty obj into collection and set title value to be equal to its collection
+  // Pass in empty obj into collection and set key to title and value to be current element
   return transformedCollection.reduce((accumulator, collection) => {
     accumulator[collection.title.toLowerCase()] = collection;
     return accumulator;

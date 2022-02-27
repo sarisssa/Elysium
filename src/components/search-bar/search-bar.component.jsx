@@ -17,7 +17,7 @@ const SearchBar = ({ collections }) => {
   const [searchbar, setSearchbar] = useState('');
   const [products, setProducts] = useState([]);
 
-  const allCategories = Object.keys(collections);
+  const allCategories = Object.keys(collections); //Arr of product categories
 
   const search = (event) => {
     setSearchbar(event.target.value);
