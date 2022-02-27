@@ -2,7 +2,8 @@
 export const sortProducts = (allCategories, collections, eventValue) => {
 
     let filteredProducts = [];
-    for (let key of allCategories) {
+
+    for (let key of allCategories) { //Iterate through all shop categories
         let curCollection = collections[key].items;
         let matchedItem = match(eventValue, curCollection);
         matchedItem.map(product => product.category = key); //Add collection title to each item
@@ -11,9 +12,10 @@ export const sortProducts = (allCategories, collections, eventValue) => {
     return filteredProducts;
 }
 
-const match = (s, items) => {
-    let values = items;
-    return values.filter(v => v.name.toLowerCase().indexOf(s) !== -1);
+//Assess if item name in curCollection matches user input
+const match = (eventValue, items) => {
+    let collectionItems = items;
+    return collectionItems.filter(item => item.name.toLowerCase().indexOf(eventValue) !== -1);
 };
 
 
