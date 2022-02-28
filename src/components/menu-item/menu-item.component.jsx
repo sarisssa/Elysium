@@ -1,4 +1,3 @@
-import React from 'react';
 import { withRouter } from "react-router";
 
 import './menu-item.styles.scss';
@@ -12,5 +11,5 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
     </div>
 );
 
-export default withRouter(MenuItem); //Higher level component to pass match as props to Menu Item
+export default withRouter(MenuItem);
 

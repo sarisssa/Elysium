@@ -15,7 +15,7 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-    user: userReducer, //Each key equates to an individual slice of state
+    user: userReducer,
     cart: cartReducer,
     directory: directoryReducer,
     shop: shopReducer,

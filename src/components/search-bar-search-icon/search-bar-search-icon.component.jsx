@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 
 import { toggleSearchBarHidden } from '../../redux/searchbar/searchbar.actions';
@@ -9,7 +8,7 @@ import './search-bar-icon.styles.scss';
 
 const SearchBarIcon = ({ toggleSearchBarHidden }) => (
     <div className='searchbar-icon' onClick={toggleSearchBarHidden}>
-        <SearchingIcon className='searching-icon'/>
+        <SearchingIcon className='searching-icon' />
     </div>
 );
 
