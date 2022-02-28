@@ -25,7 +25,7 @@ const ItemDetailsPage = ({ item, addItem }) => {
         <div className='product-detail-container'>
             <div className='product-detail-inner'>
                 <div className="product-image-container">
-                    <img className='product-image' src={imageUrl} />
+                    <img className='product-image' alt='product-img' src={imageUrl} />
                 </div>
             </div>
             <div className='product-detail-inner product-description'>
