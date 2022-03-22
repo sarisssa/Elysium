@@ -20,7 +20,7 @@ const INITIAL_STATE = {
         },
         {
             title: 'pants',
-            imageUrl: 'https://cdn.shopify.com/s/files/1/0495/1044/9304/products/product-image-1435595279_800x.jpg?v=1603999835',
+            imageUrl: 'https://ae01.alicdn.com/kf/Hb84942416c5041f392731d014127a90cc/April-MOMO-2019-Men-Spring-Autumn-Cargo-Pants-Trousers-Sweatpants-Streetwear-Male-Casual-Fashion-Loose-Style.jpg',
             size: 'large',
             id: 4,
             linkUrl: 'shop/pants'
